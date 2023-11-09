@@ -1,8 +1,8 @@
 import math
 import time
-from player import HumanPlayer, RandomComputerPlayer
+from player import HumanPlayer
 
-class TicTacToe():
+class TicTacToe:
     def __init__(self):
         self.board = [' ' for _ in range(9)] # we will use a single list to rep 3x3 board
         self.current_winner = None # Keep track of winnner
@@ -97,7 +97,7 @@ def play(game, x_player, o_player, print_game=True):
         print('It\'s a tie')
 
 if __name__ == '__main__':
-    x_player = HumanPlayer('X')
-    o_player = RandomComputerPlayer('O')
+    x_player = HumanPlayer('Player 1')
+    o_player = HumanPlayer('Player 2')
     t = TicTacToe()
     play(t, x_player, o_player, print_game=True)

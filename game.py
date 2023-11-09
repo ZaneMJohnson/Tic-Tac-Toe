@@ -1,6 +1,6 @@
 import math
 import time
-from player import HumanPlayer, RandomComputerPlayer, HumanPlayer2
+from player import HumanPlayer1, HumanPlayer2 #RandomComputerPlayer
 
 class TicTacToe():
     def __init__(self):
@@ -74,7 +74,8 @@ def play(game, x_player, o_player, print_game=True):
             square = o_player.get_move(game)
         else:
             square = x_player.get_move(game)
-        if game.make_move(square, letter):
+        if game.make_move(letter):
+        #if game.make_move(square, letter):
 
             if print_game:
                 print(letter + ' makes a move to square {}'.format(square))
@@ -97,8 +98,8 @@ def play(game, x_player, o_player, print_game=True):
         print('It\'s a tie')
 
 if __name__ == '__main__':
-    x_player = HumanPlayer('X')
+    x_player = HumanPlayer1('X')
     o_player = HumanPlayer2('O')
-    # o_player = RandomComputerPlayer('O')
+    #o_player = RandomComputerPlayer('O')
     t = TicTacToe() 
     play(t, x_player, o_player, print_game=True)
